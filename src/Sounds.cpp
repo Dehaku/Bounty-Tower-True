@@ -38,18 +38,6 @@ void SoundManager::playSound(std::string input)
             return;
         }
     }
-    for (size_t i = 0; i != sounds.size(); i++)
-    {
-        if (sounds.at(i).name == "Error.wav")
-        {
-            //return sounds.at(i).soundstorage;
-            auto sound = std::make_unique<sf::Sound>(sounds[i].soundstorage);
-            sound->setVolume(gvars::soundVolume);
-            playSounds.push_back(std::move(sound));
-            playSounds.back()->play();
-            return;
-        }
-    }
 }
 
 void SoundManager::cleanSounds()
